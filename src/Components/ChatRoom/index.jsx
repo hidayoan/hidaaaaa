@@ -1,5 +1,4 @@
 import { SendOutlined } from "@ant-design/icons";
-import { Affix } from "antd";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import ChatMessage from "../ChatMessage";
@@ -7,6 +6,7 @@ import ChatMessage from "../ChatMessage";
 function ChatRoom(props) {
 	const { firestore, auth, firebase, chatName } = props;
 	const dummy = useRef();
+
 	const messagesRef = firestore
 		.collection("messages")
 		.doc(chatName.id)
